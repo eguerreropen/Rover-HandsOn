@@ -6,6 +6,7 @@ Después podrá iniciar la búsqueda de la bandera enemiga usando una cámara. A
 
 ## Ideas Pendientes:
   - Mapeo de la pista.
+  - Streamear el video a un telefono.
     
 ## Ideas implementadas:
   - Usar GitHub.
