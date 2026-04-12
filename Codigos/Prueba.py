@@ -1,13 +1,23 @@
+import time
 from ultralytics import YOLO
 
-# Load a YOLO26n PyTorch model
-model = YOLO("yolo26n.pt")
+# Load exported NCNN model once
+model = YOLO("yolo26n_ncnn_model", task="detect")
 
-# Export the model to NCNN format
-model.export(format="ncnn")  # creates 'yolo26n_ncnn_model'
+image_path = "bus.jpg"
+times = []
 
-# Load the exported NCNN model
-ncnn_model = YOLO("yolo26n_ncnn_model")
+for i in range(20):
+    start = time.perf_counter()
+    results = model(image_path, verbose=False)
+    end = time.perf_counter()
 
-# Run inference
-results = ncnn_model("https://ultralytics.com/images/bus.jpg")
+    elapsed = end - start
+    times.append(elapsed)
+
+    boxes = results[0].boxes
+    print(f"Run {i+1:02d}: {elapsed:.4f} s | detections: {len(boxes)}")
+
+avg = sum(times) / len(times)
+print(f"\nAverage time: {avg:.4f} s")
+print(f"Approx FPS: {1/avg:.2f}")
