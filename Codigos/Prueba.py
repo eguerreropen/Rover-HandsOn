@@ -1,7 +1,6 @@
 import time
 from ultralytics import YOLO
 
-# Load exported NCNN model once
 model = YOLO("yolo26n_ncnn_model", task="detect")
 
 image_path = "bus.jpg"
