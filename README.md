@@ -1,5 +1,4 @@
 # Notas:
 
-Hecho para correr en una ...
-
+RECORDAD activar el .venv al trabajar con python en la Rpi
 
