@@ -1,4 +1,4 @@
 En esta carpeta iran los codigos del ROVER. USar el siguiente formato de numeracion. VX.Y.Z. X es el mayor release, Y es para mini avances y Z es para arreglos de bugs.
 
 AAAA
-AAAA
+AAA
