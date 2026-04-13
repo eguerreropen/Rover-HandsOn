@@ -7,3 +7,5 @@ El codigo de prueba con bus.jpg, se saco de: https://docs.ultralytics.com/guides
 
 ## Tips
 Para mas fps, reducir imgsz, se hizo una prueba con 320 y se alcanzo 37 fps 12/04/26.
+
+RECORDAD: Recuperar profundidad de la imagen.
