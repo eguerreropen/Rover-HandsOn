@@ -1,0 +1,28 @@
+# Perfil de compilacion (formato sketch.yaml de arduino-cli).
+#
+# Lecciones de la version anterior, para no repetirlas:
+#   - "default_profile" es obligatorio: sin el, App Lab dice
+#     "Missing Profile name ... has no default profile".
+#   - Arduino_RouterBridge NO se lista: viene en el core arduino:zephyr.
+#   - Las versiones entre parentesis SI hacen falta: la migracion de App Lab
+#     escribe parentesis vacios en las entradas sin version y luego falla con
+#     "invalid library reference".
+#
+# Servo: 1.3.0 es la PRIMERA version que soporta la arquitectura zephyr. Con
+# una anterior el sketch ni compila ("This library only supports boards with
+# an AVR, SAM, SAMD..."). No la bajes.
+
+profiles:
+  default:
+    fqbn: arduino:zephyr:unoq
+    platforms:
+      - platform: arduino:zephyr
+    libraries:
+      - Servo (1.3.0)
+      - MsgPack (0.4.2)
+      # Adafruit y no la libreria APDS de Arduino: su begin() acepta un
+      # TwoWire*, lo que permitira el segundo APDS en Wire1 (Qwiic) mas adelante.
+      - Adafruit APDS9960 Library (1.3.1)
+      - Adafruit BusIO (1.17.4)
+
+default_profile: default
