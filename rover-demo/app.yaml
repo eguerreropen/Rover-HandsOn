@@ -1,0 +1,7 @@
+name: Rover H07 - demo parte 1
+description: Identificacion de lineas (negro/amarillo/azul/rojo) y proteccion de borde. Sensores en el MCU, logica en el MPU.
+icon: 🚩
+
+bricks:
+  # Pagina de lecturas de sensores (puerto 7000).
+  - arduino:web_ui: {}
